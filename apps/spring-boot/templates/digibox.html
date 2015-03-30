@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header :: head"></head>
+<body ng-app="vdr">
+<!-- Sidebar mods -->
+<link href="../public/css/simple-sidebar.css"
+      th:href="@{/css/simple-sidebar.css}"
+      rel="stylesheet" media="screen"/>
+<style>
+    #wrapper {
+        margin-top: 50px;
+    }
+
+    .sidebar-nav li.sidebar-brand:hover {
+        background-color: transparent;
+    }
+
+    .sidebar-nav li:hover {
+        background-color: antiquewhite;
+    }
+</style>
+
+<nav th:replace="header :: topnavbar"/>
+
+<div id="wrapper" class="container" ng-controller="ListController">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    Kanavat
+                </a>
+            </li>
+            <li ng-repeat="chan in channels"
+                class="list-group-item" ng-click="getEPG(chan.channelNumber)">
+                <b>{{chan.name}}</b>
+            </li>
+        </ul>
+    </div>
+
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Ohjelmat</h3>
+                        </div>
+                        <div class="panel-body">
+                            <button type="button" class="btn btn-default menu-toggle">Kanavat</button>
+                            <div ng-hide="error == undefined">
+                                <div class="alert alert-danger" role="alert">{{error}}</div>
+                            </div>
+
+                            <ul class="list-group">
+                                <li ng-repeat="prog in programs" class="list-group-item">
+                                    <b>{{prog.start}} - {{prog.end}}</b> {{prog.name}} <br/>
+                                    {{prog.desc}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /container -->
+
+<th:block th:replace="header :: commonScripts"/>
+
+<script src="../public/js/vdr.js"
+        th:src="@{/js/vdr.js}"></script>
+
+<script language="JavaScript">
+    $(".menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+
+</body>
+</html>

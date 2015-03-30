@@ -1,0 +1,204 @@
+{
+	"1": {
+		"state": {
+			"on": true,
+			"bri": 254,
+			"hue": 14922,
+			"sat": 144,
+			"xy": [0.4595, 0.4105],
+			"ct": 369,
+			"alert": "none",
+			"effect": "none",
+			"colormode": "ct",
+			"reachable": false
+		},
+		"type": "Extended color light",
+		"name": "Hue Spot",
+		"modelid": "LCT003",
+		"uniqueid": "00:17:88:01:00:d2:27:ba-0b",
+		"swversion": "66010732",
+		"pointsymbol": {
+			"1": "none",
+			"2": "none",
+			"3": "none",
+			"4": "none",
+			"5": "none",
+			"6": "none",
+			"7": "none",
+			"8": "none"
+		}
+	},
+	"2": {
+		"state": {
+			"on": true,
+			"bri": 254,
+			"hue": 14922,
+			"sat": 144,
+			"xy": [0.4595, 0.4105],
+			"ct": 369,
+			"alert": "none",
+			"effect": "none",
+			"colormode": "ct",
+			"reachable": false
+		},
+		"type": "Extended color light",
+		"name": "Hue Spot 1",
+		"modelid": "LCT003",
+		"uniqueid": "00:17:88:01:00:d7:1b:86-0b",
+		"swversion": "66010732",
+		"pointsymbol": {
+			"1": "none",
+			"2": "none",
+			"3": "none",
+			"4": "none",
+			"5": "none",
+			"6": "none",
+			"7": "none",
+			"8": "none"
+		}
+	},
+	"3": {
+		"state": {
+			"on": true,
+			"bri": 254,
+			"hue": 14922,
+			"sat": 144,
+			"xy": [0.4595, 0.4105],
+			"ct": 369,
+			"alert": "none",
+			"effect": "none",
+			"colormode": "ct",
+			"reachable": false
+		},
+		"type": "Extended color light",
+		"name": "Hue Spot 2",
+		"modelid": "LCT003",
+		"uniqueid": "00:17:88:01:00:d4:2a:24-0b",
+		"swversion": "66010732",
+		"pointsymbol": {
+			"1": "none",
+			"2": "none",
+			"3": "none",
+			"4": "none",
+			"5": "none",
+			"6": "none",
+			"7": "none",
+			"8": "none"
+		}
+	},
+	"4": {
+		"state": {
+			"on": true,
+			"bri": 254,
+			"hue": 14922,
+			"sat": 144,
+			"xy": [0.4595, 0.4105],
+			"ct": 369,
+			"alert": "none",
+			"effect": "none",
+			"colormode": "ct",
+			"reachable": false
+		},
+		"type": "Extended color light",
+		"name": "Hue Spot 4",
+		"modelid": "LCT003",
+		"uniqueid": "00:17:88:01:00:f0:7b:02-0b",
+		"swversion": "66010732",
+		"pointsymbol": {
+			"1": "none",
+			"2": "none",
+			"3": "none",
+			"4": "none",
+			"5": "none",
+			"6": "none",
+			"7": "none",
+			"8": "none"
+		}
+	},
+	"5": {
+		"state": {
+			"on": true,
+			"bri": 254,
+			"hue": 14922,
+			"sat": 144,
+			"xy": [0.4595, 0.4105],
+			"ct": 369,
+			"alert": "none",
+			"effect": "none",
+			"colormode": "ct",
+			"reachable": false
+		},
+		"type": "Extended color light",
+		"name": "Hue Spot 5",
+		"modelid": "LCT003",
+		"uniqueid": "00:17:88:01:00:f0:72:f7-0b",
+		"swversion": "66010732",
+		"pointsymbol": {
+			"1": "none",
+			"2": "none",
+			"3": "none",
+			"4": "none",
+			"5": "none",
+			"6": "none",
+			"7": "none",
+			"8": "none"
+		}
+	},
+	"6": {
+		"state": {
+			"on": true,
+			"bri": 254,
+			"hue": 14922,
+			"sat": 144,
+			"xy": [0.4595, 0.4105],
+			"ct": 369,
+			"alert": "none",
+			"effect": "none",
+			"colormode": "ct",
+			"reachable": false
+		},
+		"type": "Extended color light",
+		"name": "Hue Spot 6",
+		"modelid": "LCT003",
+		"uniqueid": "00:17:88:01:00:f0:72:d1-0b",
+		"swversion": "66010732",
+		"pointsymbol": {
+			"1": "none",
+			"2": "none",
+			"3": "none",
+			"4": "none",
+			"5": "none",
+			"6": "none",
+			"7": "none",
+			"8": "none"
+		}
+	},
+	"7": {
+		"state": {
+			"on": true,
+			"bri": 254,
+			"hue": 65500,
+			"sat": 253,
+			"xy": [0.7024, 0.2962],
+			"alert": "none",
+			"effect": "none",
+			"colormode": "xy",
+			"reachable": true
+		},
+		"type": "Color light",
+		"name": "LightStrips 1",
+		"modelid": "LST001",
+		"uniqueid": "00:17:88:01:00:cf:e7:08-0b",
+		"swversion": "66010400",
+		"pointsymbol": {
+			"1": "none",
+			"2": "none",
+			"3": "none",
+			"4": "none",
+			"5": "none",
+			"6": "none",
+			"7": "none",
+			"8": "none"
+		}
+	}
+}

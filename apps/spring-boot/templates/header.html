@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <title th:text="${title}">Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
+    <style>
+        .bg-image {
+            position: relative;
+            background-size: cover;
+        }
+
+        .jumbotron.bg-image h1 {
+            text-align: center;
+            /* text-shadow: 0 0 15px #ffffff; */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Fixed navbar -->
+<nav th:fragment="topnavbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Koti</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!-- li><a href="#">Home</a></li -->
+                <li data-th-each="n : ${navi}" th:class="${n.active}? 'active'">
+                    <a th:href="${n.path}" href="/" data-th-text="${n.name}">Page name</a>
+                </li>
+            </ul>
+            <!-- ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Default</a></li>
+                <li><a href="#">Static top</a></li>
+                <li class="active"><a href="./">Fixed top</a></li>
+            </ul -->
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+<th:block th:fragment="commonScripts">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript"
+            src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+
+    <script src="../public/js/libs/moment.js/2.8.4/moment-with-locales.min.js"
+            th:src="@{/js/libs/moment.js/2.8.4/moment-with-locales.min.js}"></script>
+
+</th:block>
+</body>
+</html>

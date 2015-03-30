@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header :: head"></head>
+<body>
+<style>
+    @media all and (min-width: 768px) {
+        .bg-image {
+            background: url(images/bus_big.jpg) no-repeat 0 0;
+        }
+    }
+
+    @media all and (max-width: 768px) {
+        .bg-image {
+            background: url(images/bus_london.jpg) no-repeat 0 0;
+        }
+    }
+</style>
+<nav th:replace="header :: topnavbar"/>
+
+<div class="container" ng-app="busschedule">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron bg-image">
+        <h1>Seuraavat bussit</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <!-- stopnumber can be determined f.ex. in here: http://www.pubtrans.it/hsl/near/ -->
+            <div ng-controller="ListController" class="panel panel-default" data-stopnumber="2133210"
+                 data-maxresults="10">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">Pääskyskuja</h3>
+                </div>
+                <div class="panel-body">
+                    <div ng-hide="error == undefined">
+                        <div class="alert alert-danger" role="alert">{{error}}</div>
+                    </div>
+
+                    <ul class="list-group">
+                        <li ng-repeat="bus in data" class="list-group-item">
+                            <b>{{bus.line}}</b> - {{bus.until}} ({{bus.time}}) <br/>
+                            <span ng-hide="bus.info == ''">Lisäinfo : {{bus.info}}<br/></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div ng-controller="ListController" class="panel panel-default" data-stopnumber="2133204"
+                 data-maxresults="10">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Turuntie</h3>
+                </div>
+                <div class="panel-body">
+                    <div ng-hide="error == undefined">
+                        <div class="alert alert-danger" role="alert">{{error}}</div>
+                    </div>
+
+                    <ul class="list-group">
+                        <li ng-repeat="bus in data" class="list-group-item">
+                            <b>{{bus.line}}</b> - {{bus.until}} ({{bus.time}}) <br/>
+                            <span ng-hide="bus.info == ''">Lisäinfo : {{bus.info}}<br/></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->
+
+<th:block th:replace="header :: commonScripts"/>
+
+<script src="../public/js/busschedule.js"
+        th:src="@{/js/busschedule.js}"></script>
+</body>
+</html>

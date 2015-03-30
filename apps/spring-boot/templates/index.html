@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header :: head"></head>
+<body>
+<style>
+    @media all and (min-width: 768px) {
+        .bg-image {
+            background: url(images/light_big.jpg) no-repeat 0 0;
+        }
+    }
+
+    @media all and (max-width: 768px) {
+        .bg-image {
+            background: url(images/light_small.jpg) no-repeat 0 0;
+        }
+    }
+</style>
+<nav th:replace="header :: topnavbar"/>
+
+<div class="container" ng-app="lights">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron bg-image">
+        <h1>Valot</h1>
+    </div>
+
+    <!-- stopnumber can be determined f.ex. in here: http://www.pubtrans.it/hsl/near/ -->
+    <div ng-controller="ListController" class="panel panel-default">
+        <div ng-hide="error == undefined" class="panel-body">
+            <div class="alert alert-danger" role="alert">{{error}}</div>
+        </div>
+
+        <ul class="list-group">
+            <li ng-repeat="dev in data | orderBy:'name'" class="list-group-item">
+                <div class="btn-group pull-right" style="clear: both" role="group" aria-label="...">
+                    <a class="btn btn-default btn-lg" ng-click="sendCmd(dev.id, 'on')">on</a>
+                    <a class="btn btn-default btn-lg" ng-click="sendCmd(dev.id, 'off')"><span
+                            class="glyphicon glyphicon-off"></span></a>
+                </div>
+
+                <h4 class="list-group-item-heading">{{dev.name}}</h4>
+                Valo
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- /container -->
+
+<th:block th:replace="header :: commonScripts"/>
+
+<script src="../public/js/lights.js"
+        th:src="@{/js/lights.js}"></script>
+</body>
+</html>
